@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { useRef } from "react";
 
 import {
 	MenuIcon,
@@ -12,7 +11,6 @@ import {
 
 const Header = () => {
 	const router = useRouter();
-	const ref = useRef();
 
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [menuClosed, setMenuClosed] = useState(true);
@@ -27,23 +25,26 @@ const Header = () => {
 				</h1>
 				<h1
 					onClick={() => router.push("/")}
-					className='text-4xl hidden lg:inline-flex mb-2 cursor-pointer'>
+					className='hover:bg-gray-100 hover:ring-2 hover:ring-current bg-gray-700 hover:text-gray-700 text-white
+					duration-200 ring-current p-2 rounded-full text-3xl hidden lg:inline-flex cursor-pointer'>
 					Caolan Fanning WebDev
 				</h1>
 				<nav className='hidden md:inline-flex cursor-pointer md:text-2xl mr-3'>
 					<ul className='flex space-x-2'>
 						<li
-							className='hover:shadow-md hover:shadow-white rounded-lg  active:bg-gray-200 w-[150px] flex justify-center transition duration-300 ease-in-out p-2'
+							className='ring-2 ring-current p-2 rounded-full  hover:bg-gray-700 hover:text-white
+							duration-200  active:bg-gray-200 w-[150px] flex justify-center transition  ease-in-out'
 							onClick={() => router.push("/")}>
 							Home
 						</li>
 						<li
-							className='hover:shadow-md hover:shadow-white rounded-lg  active:bg-gray-200 w-[150px] flex justify-center transition duration-300 ease-in-out p-2'
+							className='ring-2 ring-current p-2  hover:bg-gray-700 hover:text-white
+							duration-200 rounded-full active:bg-gray-200 w-[150px] flex justify-center transition  ease-in-out '
 							onClick={() => router.push("/about")}>
 							About
 						</li>
 						<li
-							className='hover:shadow-md hover:shadow-white rounded-lg  active:bg-gray-200 w-[150px] flex justify-center transition duration-300 ease-in-out p-2'
+							className=' ring-2 ring-current  hover:bg-gray-700 hover:text-white rounded-full  active:bg-gray-200 w-[150px] flex justify-center transition duration-200 ease-in-out p-2'
 							onClick={() => router.push("/contact")}>
 							Contact
 						</li>

@@ -2,4 +2,7 @@
 @tailwind base;
 
 @layer base {
+	body {
+		@apply bg-[#f0f0f0];
+	}
 }
