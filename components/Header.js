@@ -69,7 +69,7 @@ const Header = () => {
 				</button>
 			</div>
 			<nav
-				className={`absolute md:hidden h-screen w-1/2 bg-gray-100 text-gray-700 shadow-lg ${
+				className={`z-50 absolute md:hidden h-screen w-1/2 bg-gray-100 text-gray-700 shadow-lg ${
 					menuClosed && "-translate-x-full transition duration-200 ease-in"
 				} ${menuOpen && "transition duration-200 ease-in"} `}>
 				<ul className='flex flex-col space-y-4 text-base mt-5'>
