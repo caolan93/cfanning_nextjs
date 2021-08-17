@@ -29,10 +29,10 @@ const Technologies = () => {
 		sass,
 	];
 	return (
-		<div className='max-w-[1500px] h-[600px] mx-auto flex flex-col md:grid md:grid-cols-2 '>
-			<div className='grid grid-cols-3 items-center '>
+		<div className='flex flex-col px-3 md:grid md:grid-cols-2 mb-[50px] md:my-[50px]'>
+			<div className='grid grid-cols-3 min-h-[350px] mb-[50px] md:mb-0'>
 				{logoArr.map((logo) => (
-					<div className='relative mb-3 h-[35px] w-[35px] md:h-[45px] md:w-[45px] mx-auto'>
+					<div className='m-auto relative h-[35px] w-[35px] md:h-[45px] md:w-[45px] lg:h-[50px] lg:w-[50px] '>
 						<Image
 							key={logoArr.indexOf(logo)}
 							src={logo}
@@ -43,7 +43,7 @@ const Technologies = () => {
 					</div>
 				))}
 			</div>
-			<div className='px-3 my-auto text-center md:text-left'>
+			<div className='text-center md:text-left max-w-[500px] mx-auto'>
 				<p>
 					When I began my webdev journey in Summer 2020, I started with the
 					basics of HTML, CSS and JavaScript.

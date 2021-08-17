@@ -25,7 +25,7 @@ const Header = () => {
 				</h1>
 				<h1
 					onClick={() => router.push("/")}
-					className='hover:bg-gray-100 hover:ring-2 hover:ring-current bg-gray-700 hover:text-gray-700 text-white
+					className='hover:ring-2 hover:ring-current bg-gray-700 text-white
 					duration-200 ring-current p-2 rounded-full text-3xl hidden lg:inline-flex cursor-pointer'>
 					Caolan Fanning WebDev
 				</h1>

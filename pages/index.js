@@ -13,9 +13,10 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Header />
-			<HeroSection />
-			<Technologies />
-			<Projects />
+			<div class='max-w-[1500px] mx-auto '>
+				<HeroSection />
+				<Technologies />
+			</div>
 		</div>
 	);
 }
