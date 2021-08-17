@@ -30,6 +30,10 @@ const Projects = () => {
 								necessitatibus consequatur.'
 					descriptionFull='Perspiciatis dignissimos id error
                 delectus voluptatem odio rerum odit a quasi enim, tempora ab
+                animi reiciendis harum iusto laborum quaerat quia. Perspiciatis dignissimos id error
+                delectus voluptatem odio rerum odit a quasi enim, tempora ab
+                animi reiciendis harum iusto laborum quaerat quia. Perspiciatis dignissimos id error
+                delectus voluptatem odio rerum odit a quasi enim, tempora ab
                 animi reiciendis harum iusto laborum quaerat quia.'
 				/>
 			</div>

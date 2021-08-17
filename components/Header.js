@@ -20,13 +20,12 @@ const Header = () => {
 			<div className='relative max-w-[1500px] mx-auto text-gray-700 flex justify-between items-center py-4 px-4 2xl:px-0'>
 				<h1
 					onClick={() => router.push("/")}
-					className='lg:hidden text-xl md:text-4xl cursor-pointer'>
+					className='lg:hidden text-xl md:text-4xl cursor-pointer rounded-full p-1 md:p-2 bg-gray-700 text-white'>
 					CF WebDev
 				</h1>
 				<h1
 					onClick={() => router.push("/")}
-					className='hover:ring-2 hover:ring-current bg-gray-700 text-white
-					duration-200 ring-current p-2 rounded-full text-3xl hidden lg:ml-8 lg:inline-flex cursor-pointer'>
+					className=' bg-gray-700 text-white p-2 rounded-full text-3xl hidden lg:ml-8 lg:inline-flex cursor-pointer'>
 					Caolan Fanning WebDev
 				</h1>
 				<nav className='hidden md:inline-flex cursor-pointer md:text-2xl mr-3'>
