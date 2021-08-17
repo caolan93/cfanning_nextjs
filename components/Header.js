@@ -26,7 +26,7 @@ const Header = () => {
 				<h1
 					onClick={() => router.push("/")}
 					className='hover:ring-2 hover:ring-current bg-gray-700 text-white
-					duration-200 ring-current p-2 rounded-full text-3xl hidden lg:inline-flex cursor-pointer'>
+					duration-200 ring-current p-2 rounded-full text-3xl hidden lg:ml-8 lg:inline-flex cursor-pointer'>
 					Caolan Fanning WebDev
 				</h1>
 				<nav className='hidden md:inline-flex cursor-pointer md:text-2xl mr-3'>
