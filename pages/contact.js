@@ -1,10 +1,12 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const Contact = () => {
 	return (
 		<div>
 			<Header />
-			This is the contact page
+
+			<Footer />
 		</div>
 	);
 };

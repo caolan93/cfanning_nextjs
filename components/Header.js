@@ -16,7 +16,7 @@ const Header = () => {
 	const [menuClosed, setMenuClosed] = useState(true);
 
 	return (
-		<header className='bg-gray-100 h-[60px] md:h-[80px] shadow-lg'>
+		<header className='z-50 bg-gray-100 h-[60px] md:h-[80px] shadow-lg fixed w-full'>
 			<div className='relative max-w-[1500px] mx-auto text-gray-700 flex justify-between items-center py-4 px-4 2xl:px-0'>
 				<h1
 					onClick={() => router.push("/")}
@@ -28,7 +28,7 @@ const Header = () => {
 					className=' bg-gray-700 text-white p-2 rounded-full text-3xl hidden lg:ml-8 lg:inline-flex cursor-pointer'>
 					Caolan Fanning WebDev
 				</h1>
-				<nav className='hidden md:inline-flex cursor-pointer md:text-2xl mr-3'>
+				<nav className='hidden md:inline-flex cursor-pointer md:text-2xl mr-3 '>
 					<ul className='flex space-x-2'>
 						<li
 							className='ring-2 ring-current p-2 rounded-full  hover:bg-gray-700 hover:text-white
@@ -69,7 +69,7 @@ const Header = () => {
 				</button>
 			</div>
 			<nav
-				className={`z-50 absolute md:hidden h-screen w-1/2 bg-gray-100 text-gray-700 shadow-lg ${
+				className={` z-50 absolute md:hidden h-screen w-1/2 bg-gray-100 text-gray-700 shadow-lg ${
 					menuClosed && "-translate-x-full transition duration-200 ease-in"
 				} ${menuOpen && "transition duration-200 ease-in"} `}>
 				<ul className='flex flex-col space-y-4 text-base mt-5'>

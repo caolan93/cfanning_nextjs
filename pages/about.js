@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const About = () => {
@@ -53,6 +54,7 @@ const About = () => {
 					<br /> Yours Sincerely, <br /> Caolan.
 				</p>
 			</div>
+			<Footer />
 		</div>
 	);
 };
