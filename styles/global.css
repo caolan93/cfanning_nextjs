@@ -3,6 +3,6 @@
 
 @layer base {
 	body {
-		@apply text-sm md:text-base lg:text-lg;
+		@apply text-sm sm:text-base lg:text-lg;
 	}
 }
