@@ -55,7 +55,9 @@ const About = () => {
 
 				<div className='flex flex-grow space-x-2 w-full overflow-x-scroll justify-start px-3 lg:px-0 md:justify-center'>
 					{contentArr.map((item) => (
-						<div className='my-6 flex flex-col shadow-lg rounded-lg'>
+						<div
+							key={contentArr.indexOf(item)}
+							className='my-6 flex flex-col shadow-lg rounded-lg'>
 							<div className='relative h-[200px] w-[200px] lg:h-[250px] lg:w-[250px]'>
 								<Image
 									className='rounded-t-lg'
@@ -66,7 +68,7 @@ const About = () => {
 								/>
 							</div>
 
-							<h3 className='text-center font-bold text-lg'>{item.name}</h3>
+							<h3 className='text-center font-bold text-lg p-3'>{item.name}</h3>
 						</div>
 					))}
 				</div>
@@ -94,7 +96,9 @@ const About = () => {
 				</div>
 				<div className=' flex flex-grow space-x-2 overflow-x-scroll justify-start px-3 lg:px-0 md:justify-center'>
 					{teachersArr.map((item) => (
-						<div className=' my-6 flex flex-col shadow-lg rounded-lg'>
+						<div
+							key={teachersArr.indexOf(item)}
+							className=' my-6 flex flex-col shadow-lg rounded-lg'>
 							<div className=' relative h-[200px] w-[200px] lg:h-[250px] lg:w-[250px]'>
 								<Image
 									className='rounded-t-lg'
@@ -105,7 +109,7 @@ const About = () => {
 								/>
 							</div>
 
-							<h3 className='text-center font-bold text-lg'>{item.name}</h3>
+							<h3 className='text-center font-bold text-lg p-3'>{item.name}</h3>
 						</div>
 					))}
 				</div>

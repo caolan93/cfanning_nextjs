@@ -17,7 +17,7 @@ const Header = () => {
 
 	return (
 		<header className='z-50 bg-gray-100 h-[60px] md:h-[80px] shadow-lg sticky top-0'>
-			<div className='relative max-w-[1500px] mx-auto text-gray-700 flex justify-between items-center py-4 px-4 2xl:px-0'>
+			<div className='max-w-[1500px] h-full mx-auto text-gray-700 flex justify-between items-center px-4 2xl:px-0'>
 				<h1
 					onClick={() => router.push("/")}
 					className='lg:hidden text-xl md:text-4xl cursor-pointer rounded-full p-1 md:p-2 bg-gray-700 text-white'>
@@ -52,7 +52,7 @@ const Header = () => {
 				<button className='md:hidden'>
 					{menuOpen && (
 						<XIcon
-							className='h-6'
+							className='h-6 active:rotate-180 ease-in-out transition-all duration-200'
 							onClick={() => {
 								`${setMenuOpen(!menuOpen)} ${setMenuClosed(!menuClosed)}`;
 							}}
@@ -63,17 +63,17 @@ const Header = () => {
 							onClick={() => {
 								`${setMenuOpen(!menuOpen)} ${setMenuClosed(!menuClosed)}`;
 							}}
-							className='h-6'
+							className='h-6 onTouch:rotate-180 active:rotate-180 ease-in-out transition-all duration-200'
 						/>
 					)}
 				</button>
 			</div>
 			<nav
-				className={` z-50 absolute md:hidden h-screen w-1/2 bg-gray-100 text-gray-700 shadow-lg ${
+				className={`md:hidden h-screen w-1/2 bg-gray-100 text-gray-700 shadow-lg ${
 					menuClosed && "-translate-x-full transition duration-200 ease-in"
 				} ${menuOpen && "transition duration-200 ease-in"} `}>
-				<ul className='flex flex-col space-y-4 text-base mt-5'>
-					<div className='flex items-center space-x-2 ml-5'>
+				<ul className='flex flex-col space-y-4 text-base'>
+					<div className='flex items-center space-x-2 ml-5 mt-4'>
 						<HomeIcon className='h-6 p-1 border-2  rounded-full' />
 						<li
 							className=''

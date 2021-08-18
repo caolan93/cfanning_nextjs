@@ -32,18 +32,14 @@ const Technologies = () => {
 		<div className='flex flex-col px-3 md:grid md:grid-cols-2 mb-[50px] md:my-[50px]'>
 			<div className='grid grid-cols-3 min-h-[350px] mb-[50px] md:mb-0'>
 				{logoArr.map((logo) => (
-					<div className='m-auto relative h-[35px] w-[35px] md:h-[45px] md:w-[45px] lg:h-[50px] lg:w-[50px] '>
-						<Image
-							key={logoArr.indexOf(logo)}
-							src={logo}
-							alt={logo}
-							objectFit='contain'
-							layout='fill'
-						/>
+					<div
+						key={logoArr.indexOf(logo)}
+						className='m-auto relative h-[35px] w-[35px] md:h-[45px] md:w-[45px] lg:h-[50px] lg:w-[50px] '>
+						<Image src={logo} alt={logo} objectFit='contain' layout='fill' />
 					</div>
 				))}
 			</div>
-			<div className='text-center md:text-left max-w-[500px] mx-auto'>
+			<div className='text-center sm:text-left max-w-[500px] mx-auto'>
 				<p>
 					When I began my webdev journey in Summer 2020, I started with the
 					basics of HTML, CSS and JavaScript.
