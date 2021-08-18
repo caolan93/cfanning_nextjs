@@ -16,7 +16,7 @@ const Header = () => {
 	const [menuClosed, setMenuClosed] = useState(true);
 
 	return (
-		<header className='z-50 bg-gray-100 h-[60px] md:h-[80px] shadow-lg fixed w-full'>
+		<header className='z-50 bg-gray-100 h-[60px] md:h-[80px] shadow-lg sticky top-0'>
 			<div className='relative max-w-[1500px] mx-auto text-gray-700 flex justify-between items-center py-4 px-4 2xl:px-0'>
 				<h1
 					onClick={() => router.push("/")}
