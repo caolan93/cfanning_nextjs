@@ -7,7 +7,7 @@ const HeroSection = () => {
 	const router = useRouter();
 
 	return (
-		<div className=' space-y-10 px-4 flex flex-col md:grid md:grid-cols-2'>
+		<div className=' space-y-10 px-4 flex flex-col md:grid md:grid-cols-2 bg-gray-50 rounded-lg'>
 			<div className='flex flex-col justify-center items-center space-y-10 '>
 				<h1 className='text-5xl mt-[50px] md:mt-0'>Welcome!</h1>
 				<p className='text-center max-w-[400px] lg:max-w-[650px]'>
@@ -21,7 +21,7 @@ const HeroSection = () => {
 					READ MORE..
 				</button>
 			</div>
-			<div className='relative mx-auto lg:h-[800px] lg:w-[400px] md:h-[600px] md:w-[300px] h-[500px] w-[250px]'>
+			<div className='relative mx-auto  md:h-[500px] md:w-[300px] h-[500px] w-[250px]'>
 				<Image src={profile} layout='fill' objectFit='contain' alt='profile' />
 			</div>
 		</div>

@@ -15,7 +15,7 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Header />
-			<div class='max-w-[1500px] mx-auto '>
+			<div className='max-w-[1500px] mx-auto '>
 				<HeroSection />
 				<Technologies />
 				<Projects />
