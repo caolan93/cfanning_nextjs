@@ -16,34 +16,34 @@ const Header = () => {
 	const [menuClosed, setMenuClosed] = useState(true);
 
 	return (
-		<header className='z-50 bg-gray-100 h-[60px] md:h-[80px] shadow-lg sticky top-0'>
-			<div className='max-w-[1500px] h-full mx-auto text-gray-700 flex justify-between items-center px-4 2xl:px-0'>
+		<header className='z-50 bg-gray-50 h-[60px] md:h-[80px] shadow-lg sticky top-0'>
+			<div className='max-w-[1500px] h-full mx-auto text-gray-900 flex justify-between items-center px-4 2xl:px-0'>
 				<h1
 					onClick={() => router.push("/")}
-					className='lg:hidden text-xl md:text-4xl cursor-pointer rounded-full p-1 md:p-2 bg-gray-700 text-white'>
+					className='lg:hidden text-xl md:text-4xl cursor-pointer rounded-full py-1 px-3 md:py-2 bg-gray-900 text-white'>
 					CF WebDev
 				</h1>
 				<h1
 					onClick={() => router.push("/")}
-					className=' bg-gray-700 text-white p-2 rounded-full text-3xl hidden lg:ml-8 lg:inline-flex cursor-pointer'>
+					className=' bg-gray-900 text-white p-2 rounded-full text-3xl hidden lg:ml-8 lg:inline-flex cursor-pointer'>
 					Caolan Fanning WebDev
 				</h1>
 				<nav className='hidden md:inline-flex cursor-pointer md:text-2xl mr-3 '>
 					<ul className='flex space-x-2'>
 						<li
-							className='ring-2 ring-current p-2 rounded-full  hover:bg-gray-700 hover:text-white
+							className='ring-2 ring-current p-2 rounded-full  hover:bg-gray-900 hover:text-white
 							duration-200  active:bg-gray-200 w-[150px] flex justify-center transition  ease-in-out'
 							onClick={() => router.push("/")}>
 							Home
 						</li>
 						<li
-							className='ring-2 ring-current p-2  hover:bg-gray-700 hover:text-white
+							className='ring-2 ring-current p-2  hover:bg-gray-900 hover:text-white
 							duration-200 rounded-full active:bg-gray-200 w-[150px] flex justify-center transition  ease-in-out '
 							onClick={() => router.push("/about")}>
 							About
 						</li>
 						<li
-							className=' ring-2 ring-current  hover:bg-gray-700 hover:text-white rounded-full  active:bg-gray-200 w-[150px] flex justify-center transition duration-200 ease-in-out p-2'
+							className=' ring-2 ring-current  hover:bg-gray-900 hover:text-white rounded-full  active:bg-gray-200 w-[150px] flex justify-center transition duration-200 ease-in-out p-2'
 							onClick={() => router.push("/contact")}>
 							Contact
 						</li>
@@ -69,7 +69,7 @@ const Header = () => {
 				</button>
 			</div>
 			<nav
-				className={`md:hidden h-screen w-1/2 bg-gray-100 text-gray-700 shadow-lg ${
+				className={`md:hidden h-screen w-1/2 bg-gray-100 text-gray-900 shadow-lg ${
 					menuClosed && "-translate-x-full transition duration-200 ease-in"
 				} ${menuOpen && "transition duration-200 ease-in"} `}>
 				<ul className='flex flex-col space-y-4 text-base'>

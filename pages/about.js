@@ -28,9 +28,9 @@ const About = () => {
 		{ name: "FreeCodeCamp", img: freecodecamp },
 	];
 	return (
-		<div>
+		<div className='bg-gray-50'>
 			<Header />
-			<div className='max-w-[1500px] mx-auto '>
+			<div className='max-w-[1500px] mx-auto py-[50px] bg-white shadow-lg rounded-lg'>
 				<h1 className='text-2xl my-4 font-bold px-3'>About Me..</h1>
 				<div className='px-3'>
 					<p>

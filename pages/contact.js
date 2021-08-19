@@ -9,70 +9,75 @@ import {
 
 const Contact = () => {
 	return (
-		<div>
+		<div className='bg-gray-50'>
 			<Header />
-			<div className='h-full w-full px-3 py-[50px] bg-gray-50'>
+			<div className='flex flex-col my-[50px] md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl md:mx-auto'>
 				{/* Left */}
-				<div className='bg-white shadow-lg flex flex-col md:grid md:grid-cols-2 mx-auto max-w-[1500px] rounded-lg md:space-x-4'>
-					<div className='flex flex-col space-y-4 my-[50px] rounded-lg bg-white p-2 lg:p-4 max-w-lg mx-auto '>
-						<h1 className='text-4xl md:text-5xl text-center p-4'>
-							Contact Details
-						</h1>
-						<div className='flex flex-col justify-evenly h-[350px]  md:h-full md:w-full'>
-							<div className='flex lg:text-xl sm:grid sm:grid-cols-2 w-full mx-auto'>
-								<PhoneIcon className='h-6 mr-10' />
-								<p>+(353)-83-177-9545</p>
-							</div>
-							<div className='flex lg:text-xl sm:grid sm:grid-cols-2 w-full mx-auto'>
-								<MailIcon className='h-6 mr-10' />
-								<p>caolan.fanning@gmail.com</p>
-							</div>
-							<div className='flex lg:text-xl sm:grid sm:grid-cols-2 w-full mx-auto '>
-								<LocationMarkerIcon className='h-6 mr-10' />
-								<p>Republic of Ireland, D14RC97.</p>
-							</div>
+				<div className='flex flex-col '>
+					<h1 className='text-center text-2xl md:text-4xl p-3'>
+						Contact Details
+					</h1>
+					<div className='flex flex-col h-[350px] md:h-auto w-full md:flex-grow justify-around max-w-md mx-auto'>
+						<div className='grid grid-cols-3'>
+							<PhoneIcon className='h-6 col-span-1 mx-auto' />
+							<p className='col-span-2'>+353-83-177-9545</p>
+						</div>
+						<div className='grid grid-cols-3'>
+							<MailIcon className='h-6 col-span-1 mx-auto' />
+							<p className='col-span-2'>caolan.fanning@gmail.com</p>
+						</div>
+						<div className='grid grid-cols-3'>
+							<LocationMarkerIcon className='h-6 col-span-1 mx-auto' />
+							<p className='col-span-2'>D14RC97, Rep. of Ireland.</p>
 						</div>
 					</div>
+				</div>
 
-					{/* Right */}
-					<div className=''>
-						<form className='flex flex-col space-y-4 my-[50px] rounded-lg bg-white p-2 lg:p-4 max-w-lg mx-auto'>
-							<div className='flex flex-col '>
-								<label>Full Name</label>
-								<input
-									className='ring-2 p-2 rounded-lg ring-gray-100 outline-none'
-									type='text'
-								/>
-							</div>
-							<div className='flex flex-col'>
-								<label>Email</label>
-								<input
-									className='ring-2 p-2 rounded-lg ring-gray-100 outline-none'
-									type='text'
-								/>
-							</div>
-							<div className='flex flex-col'>
-								<label>Phone</label>
-								<input
-									className='ring-2 p-2 rounded-lg ring-gray-100 outline-none'
-									type='text'
-								/>
-							</div>
-							<div className='flex flex-col'>
-								<label>Message</label>
-								<textarea
-									rows={10}
-									className='ring-2 p-2 rounded-lg ring-gray-100 outline-none'
-									type='text'
-								/>
-							</div>
-							<button
-								className='bg-gray-200 rounded-lg p-2 outline-none'
-								type='submit'>
-								Send Message
-							</button>
-						</form>
-					</div>
+				{/* Right */}
+				<div className='pb-[50px]'>
+					<h1 className='text-center text-2xl md:text-4xl p-3'>Get In Touch</h1>
+					<form className='flex flex-col space-y-4 px-3 mt-4 max-w-md mx-auto'>
+						<div className='flex flex-col space-y-1'>
+							<label className='pl-2'>Full Name</label>
+							<input
+								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+								type='text'
+								name='fullName'
+								placeholder='Name'
+							/>
+						</div>
+						<div className='flex flex-col space-y-1'>
+							<label className='pl-2'>Email</label>
+							<input
+								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+								type='email'
+								name='email'
+								placeholder='Email'
+							/>
+						</div>
+						<div className='flex flex-col space-y-1'>
+							<label className='pl-2'>Phone</label>
+							<input
+								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+								type='number'
+								name='phone'
+								placeholder='Phone'
+							/>
+						</div>
+						<div className='flex flex-col space-y-1'>
+							<label className='pl-2'>Message</label>
+							<textarea
+								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+								type='text'
+								name='message'
+								rows='10'
+								placeholder='Message'
+							/>
+						</div>
+						<button className='h-10 bg-gray-100 rounded-lg hover:bg-gray-200 active:scale-95 transition-all duration-150 ease-in'>
+							Send
+						</button>
+					</form>
 				</div>
 			</div>
 			<Footer />

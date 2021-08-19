@@ -7,7 +7,7 @@ const HeroSection = () => {
 	const router = useRouter();
 
 	return (
-		<div className=' space-y-10 px-4 flex flex-col md:grid md:grid-cols-2 bg-gray-50 rounded-lg'>
+		<div className=' space-y-10 px-4 flex flex-col md:grid md:grid-cols-2 md:py-12 shadow-lg bg-white '>
 			<div className='flex flex-col justify-center items-center space-y-10 '>
 				<h1 className='text-5xl mt-[50px] md:mt-0'>Welcome!</h1>
 				<p className='text-center max-w-[400px] lg:max-w-[650px]'>

@@ -4,7 +4,7 @@ import proshoptn from "../images/proshopThumbnail.png";
 
 const Projects = () => {
 	return (
-		<div className='flex flex-col md:grid md:grid-cols-2 bg-gray-50 py-10'>
+		<div className='flex flex-col md:grid md:grid-cols-2 md:py-12 bg-white py-10'>
 			<div className='flex flex-col mx-auto'>
 				<div className='m-2'>
 					<ProjectCard
