@@ -33,8 +33,18 @@ const Footer = () => {
 				</div>
 				<div className='md:col-start-3 md:my-auto'>
 					<div className='flex justify-center items-center mt-[20px] space-x-4 mb-4'>
-						<VscGithubInverted className='text-[35px] ' />
-						<VscTwitter className='text-[35px] ' />
+						<a
+							className='cursor-pointer hover:text-[#6cc644] transition-all ease-in duration-150'
+							href='https://github.com/caolan93'
+							target='_blank'>
+							<VscGithubInverted className='text-[35px] ' />
+						</a>
+						<a
+							className='cursor-pointer hover:text-[#1DA1F2] transition-all ease-in duration-150'
+							href='https://twitter.com/CaolanFanning'
+							target='_blank'>
+							<VscTwitter className='text-[35px] ' />
+						</a>
 					</div>
 					<div className='border-b text-gray-800 md:hidden' />
 				</div>

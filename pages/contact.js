@@ -11,7 +11,7 @@ const Contact = () => {
 	return (
 		<div className='bg-gray-50'>
 			<Header />
-			<div className='flex flex-col my-[50px] md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl md:mx-auto'>
+			<div className='flex flex-col my-[50px] md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl lg:mx-auto'>
 				{/* Left */}
 				<div className='flex flex-col '>
 					<h1 className='text-center text-2xl md:text-4xl p-3'>
@@ -19,16 +19,18 @@ const Contact = () => {
 					</h1>
 					<div className='flex flex-col h-[350px] md:h-auto w-full md:flex-grow justify-around max-w-md mx-auto'>
 						<div className='grid grid-cols-3'>
-							<PhoneIcon className='h-6 col-span-1 mx-auto' />
-							<p className='col-span-2'>+353-83-177-9545</p>
+							<PhoneIcon className='h-6 lg:h-8 col-span-1 mx-auto' />
+							<p className='col-span-2 lg:text-2xl'>+353-83-177-9545</p>
 						</div>
 						<div className='grid grid-cols-3'>
-							<MailIcon className='h-6 col-span-1 mx-auto' />
-							<p className='col-span-2'>caolan.fanning@gmail.com</p>
+							<MailIcon className='h-6 lg:h-8  col-span-1 mx-auto' />
+							<p className='col-span-2 lg:text-2xl'>caolan.fanning@gmail.com</p>
 						</div>
 						<div className='grid grid-cols-3'>
-							<LocationMarkerIcon className='h-6 col-span-1 mx-auto' />
-							<p className='col-span-2'>D14RC97, Rep. of Ireland.</p>
+							<LocationMarkerIcon className='h-6 lg:h-8  col-span-1 mx-auto' />
+							<p className='col-span-2 lg:text-2xl'>
+								D14RC97, Rep. of Ireland.
+							</p>
 						</div>
 					</div>
 				</div>

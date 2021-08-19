@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import {
 	MenuIcon,
@@ -11,9 +11,29 @@ import {
 
 const Header = () => {
 	const router = useRouter();
+	const menuRef = useRef();
 
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [menuClosed, setMenuClosed] = useState(true);
+
+	const menuHandler = () => {
+		setMenuOpen(!menuOpen);
+		setMenuClosed(!menuClosed);
+	};
+
+	useEffect(() => {
+		let handler = (event) => {
+			if (!menuRef.current.contains(event.target)) {
+				menuHandler();
+			}
+		};
+
+		document.addEventListener("mousedown", handler);
+
+		return () => {
+			document.removeEventListener("mousedown", handler);
+		};
+	});
 
 	return (
 		<header className='z-50 bg-gray-50 h-[60px] md:h-[80px] shadow-lg sticky top-0'>
@@ -32,18 +52,18 @@ const Header = () => {
 					<ul className='flex space-x-2'>
 						<li
 							className='ring-2 ring-current p-2 rounded-full  hover:bg-gray-900 hover:text-white
-							duration-200  active:bg-gray-200 w-[150px] flex justify-center transition  ease-in-out'
+							duration-150  active:bg-gray-200 w-[150px] flex justify-center transition-all ease-in'
 							onClick={() => router.push("/")}>
 							Home
 						</li>
 						<li
 							className='ring-2 ring-current p-2  hover:bg-gray-900 hover:text-white
-							duration-200 rounded-full active:bg-gray-200 w-[150px] flex justify-center transition  ease-in-out '
+							duration-150 rounded-full active:bg-gray-200 w-[150px] flex justify-center transition-all ease-in '
 							onClick={() => router.push("/about")}>
 							About
 						</li>
 						<li
-							className=' ring-2 ring-current  hover:bg-gray-900 hover:text-white rounded-full  active:bg-gray-200 w-[150px] flex justify-center transition duration-200 ease-in-out p-2'
+							className=' ring-2 ring-current  hover:bg-gray-900 hover:text-white rounded-full  active:bg-gray-200 w-[150px] flex justify-center transition-allduration-150 ease-in p-2'
 							onClick={() => router.push("/contact")}>
 							Contact
 						</li>
@@ -69,47 +89,36 @@ const Header = () => {
 				</button>
 			</div>
 			<nav
-				className={`md:hidden h-screen w-1/2 bg-gray-100 text-gray-900 shadow-lg ${
+				ref={menuRef}
+				className={`md:hidden h-screen w-1/2 bg-gray-50 text-gray-900 shadow-lg ${
 					menuClosed && "-translate-x-full transition duration-200 ease-in"
 				} ${menuOpen && "transition duration-200 ease-in"} `}>
 				<ul className='flex flex-col space-y-4 text-base'>
-					<div className='flex items-center space-x-2 ml-5 mt-4'>
+					<div
+						onClick={() => {
+							`${router.push("/")} ${menuHandler}`;
+						}}
+						className='flex items-center space-x-2 ml-5 mt-4'>
 						<HomeIcon className='h-6 p-1 border-2  rounded-full' />
-						<li
-							className=''
-							onClick={() => {
-								`${router.push("/")} ${setMenuOpen(!menuOpen)} ${setMenuClosed(
-									!menuClosed
-								)}`;
-							}}>
-							Home
-						</li>
+						<li className=''>Home</li>
 					</div>
 					<div className='border-b-2 border-white' />
-					<div className='flex items-center space-x-2 ml-5'>
+					<div
+						onClick={() => {
+							`${router.push("/about")} ${menuHandler}`;
+						}}
+						className='flex items-center space-x-2 ml-5'>
 						<BookOpenIcon className='h-6 p-1 border-2  rounded-full' />
-						<li
-							className=''
-							onClick={() => {
-								`${router.push("/about")} ${setMenuOpen(
-									!menuOpen
-								)} ${setMenuClosed(!menuClosed)}`;
-							}}>
-							About
-						</li>
+						<li className=''>About</li>
 					</div>
 					<div className='border-b-2 border-white' />
-					<div className='flex items-center space-x-2 ml-5'>
+					<div
+						onClick={() => {
+							`${router.push("/contact")} ${menuHandler}`;
+						}}
+						className='flex items-center space-x-2 ml-5'>
 						<PhoneIcon className='h-6 p-1 border-2 rounded-full' />
-						<li
-							className=''
-							onClick={() => {
-								`${router.push("/contact")} ${setMenuOpen(
-									!menuOpen
-								)} ${setMenuClosed(!menuClosed)}`;
-							}}>
-							Contact
-						</li>
+						<li className=''>Contact</li>
 					</div>
 					<div className='border-b-2 border-white' />
 				</ul>
