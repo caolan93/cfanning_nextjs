@@ -16,7 +16,7 @@ const ProjectCard = ({
 	const [readMore, setReadMore] = useState(false);
 
 	return (
-		<div className='px-3 py-6 justify-between relative bg-pink-200 shadow-lg rounded-lg md:m-0 flex flex-col space-y-6 max-w-lg'>
+		<div className='px-3 py-6 justify-between relative bg-purple-50  shadow-lg rounded-lg md:m-0 flex flex-col space-y-6 max-w-lg'>
 			<div className='text-center p-2 font-semibold text-lg bg-white rounded-lg shadow-md'>
 				{title}
 			</div>
@@ -41,7 +41,7 @@ const ProjectCard = ({
 				</div>
 				<div className='justify-self-center self-center'>
 					<a href={link} target='_blank' rel='noopener'>
-						<button className=' text-white hover:bg-gray-900 px-3 py-2  rounded-md bg-blue-400 transition-all active:scale-95 ease-out duration-100'>
+						<button className=' text-white hover:bg-gray-900 px-3 py-2  rounded-md bg-blue-500 transition-all active:scale-95 ease-out duration-100'>
 							View Project
 						</button>
 					</a>
