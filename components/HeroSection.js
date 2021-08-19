@@ -21,8 +21,14 @@ const HeroSection = () => {
 					READ MORE..
 				</button>
 			</div>
-			<div className='relative mx-auto  md:h-[500px] md:w-[300px] h-[500px] w-[250px]'>
-				<Image src={profile} layout='fill' objectFit='contain' alt='profile' />
+			<div className='relative mx-auto  md:h-[500px] md:w-[450px] h-[500px] w-[250px]'>
+				<Image
+					className='rounded-md'
+					src={profile}
+					layout='fill'
+					objectFit='cover'
+					alt='profile'
+				/>
 			</div>
 		</div>
 	);
