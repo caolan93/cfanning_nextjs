@@ -10,7 +10,7 @@ export default function Home() {
 	return (
 		<div>
 			<Head>
-				<title>Caolan Fanning - WebDev</title>
+				<title>Welcome to my Personal Portfolio Website</title>
 
 				<link rel='icon' href='/favicon.ico' />
 			</Head>

@@ -35,15 +35,15 @@ const Technologies = () => {
 					<div
 						key={logoArr.indexOf(logo)}
 						className='flex justify-center items-center'>
-						<div className='bg-white p-3 rounded-full flex justify-center items-center'>
-							<Image
-								src={logo}
-								alt={logo}
-								objectFit='contain'
-								height={45}
-								width={45}
-								layout='fixed'
-							/>
+						<div className='bg-white p-3 rounded-full'>
+							<div className='relative h-[35px] w-[35px] sm:h-[45px] sm:w-[45px] '>
+								<Image
+									src={logo}
+									alt={logo}
+									objectFit='contain'
+									layout='fill'
+								/>
+							</div>
 						</div>
 					</div>
 				))}

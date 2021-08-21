@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -7,7 +9,48 @@ import {
 	LocationMarkerIcon,
 } from "@heroicons/react/solid";
 
+import emailjs from "emailjs-com";
+
 const Contact = () => {
+	const USER_ID = process.env.USER_ID;
+	const SERVICE_ID = process.env.SERVICE_ID;
+	const TEMPLATE_ID = process.env.TEMPLATE_ID;
+
+	console.log(SERVICE_ID);
+
+	const [name, setName] = useState("");
+	const [phone, setPhone] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
+
+	const [emailSuccess, setEmailSuccess] = useState(false);
+	const [emailFailure, setEmailFailure] = useState(false);
+
+	const templateParams = {
+		name,
+		phone,
+		email,
+		message,
+	};
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+
+		emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID).then(
+			(result) => {
+				setEmailSuccess(true);
+				setEmailFailure(true);
+				setName("");
+				setPhone("");
+				setEmail("");
+				setMessage("");
+			},
+			(error) => {
+				setEmailSuccess(false);
+				setEmailFailure(true);
+			}
+		);
+	};
 	return (
 		<div className='bg-gray-50'>
 			<Header />
@@ -44,8 +87,10 @@ const Contact = () => {
 							<input
 								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
 								type='text'
-								name='fullName'
+								value={name}
+								name='name'
 								placeholder='Name'
+								onChange={(e) => setName(e.target.value)}
 							/>
 						</div>
 						<div className='flex flex-col space-y-1'>
@@ -55,6 +100,8 @@ const Contact = () => {
 								type='email'
 								name='email'
 								placeholder='Email'
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 						</div>
 						<div className='flex flex-col space-y-1'>
@@ -64,6 +111,8 @@ const Contact = () => {
 								type='number'
 								name='phone'
 								placeholder='Phone'
+								value={phone}
+								onChange={(e) => setPhone(e.target.value)}
 							/>
 						</div>
 						<div className='flex flex-col space-y-1'>
@@ -74,9 +123,13 @@ const Contact = () => {
 								name='message'
 								rows='10'
 								placeholder='Message'
+								value={message}
+								onChange={(e) => setMessage(e.target.value)}
 							/>
 						</div>
-						<button className='h-10 bg-gray-100 rounded-lg hover:bg-gray-200 active:scale-95 transition-all duration-150 ease-in'>
+						<button
+							onClick={sendEmail}
+							className='h-10 bg-gray-100 rounded-lg hover:bg-gray-200 active:scale-95 transition-all duration-150 ease-in'>
 							Send
 						</button>
 					</form>

@@ -13,8 +13,10 @@ const Projects = () => {
 						title='Airbnb Clone'
 						image={airbnbThumbail}
 						link='https://airbnb-nextjs-clone.vercel.app/'
-						descriptionStart='A mobile responsive Airbnb website clone. This was one of my first times trying out NextJS and TailwindCSS. Here I used static data to render the pages information and data.'
-						descriptionFull="While building this app I was able to explore TailwindCSS and NextJS together. It was my first time using both technologies. Through building this project I learned about TailwindCSS and it's mobile first styling methods and utility classes. I had a lot of fun working with NextJS and it's built in functions such as routing and the image components. Working with static information gave me an insight into the power of server side rendering. I deployed the site using Vercel."
+						descriptionStart={`A mobile responsive Airbnb website clone. This was one of my first times trying out NextJS and TailwindCSS. Here I used static data to render the pages information and data. `}
+						descriptionFull={`While building this app I was able to explore TailwindCSS and NextJS together. It was my first time using both technologies.${(
+							<br />
+						)}  Through building this project I learned about TailwindCSS and it's mobile first styling methods and utility classes. I had a lot of fun working with NextJS and it's built in functions such as routing and the image components. Working with static information gave me an insight into the power of server side rendering. I deployed the site using Vercel.`}
 					/>
 				</div>
 				<div className='m-2'>

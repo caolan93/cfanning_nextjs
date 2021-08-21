@@ -41,7 +41,7 @@ const ProjectCard = ({
 				</div>
 				<div className='justify-self-center self-center'>
 					<a href={link} target='_blank' rel='noopener'>
-						<button className=' text-white hover:bg-gray-900 px-3 py-2  rounded-md bg-blue-500 transition-all active:scale-95 ease-out duration-100'>
+						<button className=' text-white hover:bg-blue-700 px-3 py-2  rounded-md bg-blue-500 transition-all active:scale-95 ease-out duration-100'>
 							View Project
 						</button>
 					</a>
@@ -51,9 +51,9 @@ const ProjectCard = ({
 							readMore ? "" : "animate-pulse"
 						}`}>
 						{readMore ? (
-							<ChevronDownIcon className='rotate-180 h-5  bg-gray-600 rounded-md text-white transition-all duration-300 ease-in' />
+							<ChevronDownIcon className='rotate-180 h-5  bg-blue-400 rounded-md text-white transition-all duration-300 ease-in' />
 						) : (
-							<ChevronDownIcon className='h-5 bg-gray-600 rounded-md text-white transition-all duration-300 ease-in' />
+							<ChevronDownIcon className='h-5 bg-blue-400 rounded-md text-white transition-all duration-300 ease-in' />
 						)}
 					</button>
 				</div>
