@@ -23,8 +23,10 @@ const Header = () => {
 
 	useEffect(() => {
 		let handler = (event) => {
-			if (!menuRef.current.contains(event.target)) {
-				menuHandler();
+			if (menuOpen === true) {
+				if (!menuRef.current.contains(event.target)) {
+					menuHandler();
+				}
 			}
 		};
 
@@ -73,16 +75,12 @@ const Header = () => {
 					{menuOpen && (
 						<XIcon
 							className='h-6 active:rotate-180 ease-in-out transition-all duration-200'
-							onClick={() => {
-								`${setMenuOpen(!menuOpen)} ${setMenuClosed(!menuClosed)}`;
-							}}
+							onClick={menuHandler}
 						/>
 					)}
 					{menuClosed && (
 						<MenuIcon
-							onClick={() => {
-								`${setMenuOpen(!menuOpen)} ${setMenuClosed(!menuClosed)}`;
-							}}
+							onClick={menuHandler}
 							className='h-6 onTouch:rotate-180 active:rotate-180 ease-in-out transition-all duration-200'
 						/>
 					)}
