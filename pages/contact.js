@@ -16,8 +16,6 @@ const Contact = () => {
 	const SERVICE_ID = process.env.SERVICE_ID;
 	const TEMPLATE_ID = process.env.TEMPLATE_ID;
 
-	console.log(SERVICE_ID);
-
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
@@ -121,7 +119,7 @@ const Contact = () => {
 								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
 								type='text'
 								name='message'
-								rows='10'
+								rows='8'
 								placeholder='Message'
 								value={message}
 								onChange={(e) => setMessage(e.target.value)}
@@ -129,7 +127,7 @@ const Contact = () => {
 						</div>
 						<button
 							onClick={sendEmail}
-							className='h-10 bg-gray-100 rounded-lg hover:bg-gray-200 active:scale-95 transition-all duration-150 ease-in'>
+							className='h-10 bg-gray-200 rounded-lg hover:bg-gray-300 active:scale-95 transition-all duration-150 ease-in'>
 							Send
 						</button>
 					</form>

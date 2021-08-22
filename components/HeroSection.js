@@ -8,7 +8,7 @@ const HeroSection = () => {
 
 	return (
 		<div className=' space-y-10 px-4 flex flex-col md:grid md:grid-cols-2 md:py-12 shadow-lg bg-white pb-[50px]'>
-			<div className='flex flex-col justify-center items-center space-y-10 '>
+			<div className='flex flex-col justify-center items-center space-y-10'>
 				<h1 className='text-5xl mt-[50px] md:mt-0'>Welcome!</h1>
 				<p className='text-center max-w-[400px] lg:max-w-[650px]'>
 					My name is Caolan Fanning and this is my personal portfolio! I built
@@ -21,12 +21,14 @@ const HeroSection = () => {
 					READ MORE..
 				</button>
 			</div>
-			<div className=' relative mx-auto  md:h-[500px] md:w-[450px] h-[350px] w-[250px]  '>
+
+			<div className=' relative mx-auto md:h-[500px] md:w-[450px] h-[350px] w-[250px] '>
 				<Image
+					priority={true}
 					className='rounded-md'
 					src={profile}
 					layout='fill'
-					objectFit='cover'
+					objectFit='contain'
 					alt='profile'
 				/>
 			</div>

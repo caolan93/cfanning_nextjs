@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import Projects from "../components/Projects";
 import Technologies from "../components/Technologies";
+import Courses from "../components/Courses";
 
 export default function Home() {
 	return (
@@ -19,6 +20,7 @@ export default function Home() {
 				<HeroSection />
 				<Technologies />
 				<Projects />
+				<Courses />
 			</div>
 			<Footer />
 		</div>

@@ -38,6 +38,7 @@ const Technologies = () => {
 						<div className='bg-white p-3 rounded-full'>
 							<div className='relative h-[35px] w-[35px] sm:h-[45px] sm:w-[45px] '>
 								<Image
+									priority={true}
 									src={logo}
 									alt={logo}
 									objectFit='contain'

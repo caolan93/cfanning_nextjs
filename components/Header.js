@@ -13,6 +13,10 @@ const Header = () => {
 	const router = useRouter();
 	const menuRef = useRef();
 
+	const [activeTab, setActiveTab] = useState(0);
+
+	const { pathname } = router;
+
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [menuClosed, setMenuClosed] = useState(true);
 
@@ -54,18 +58,19 @@ const Header = () => {
 					<ul className='flex space-x-2'>
 						<li
 							className='ring-2 ring-current p-2 rounded-full  hover:bg-gray-900 hover:text-white
-							duration-150  active:bg-gray-200 w-[150px] flex justify-center transition-all ease-in'
+							duration-150  w-[150px] flex justify-center transition-all ease-in '
 							onClick={() => router.push("/")}>
+							{" "}
 							Home
 						</li>
 						<li
 							className='ring-2 ring-current p-2  hover:bg-gray-900 hover:text-white
-							duration-150 rounded-full active:bg-gray-200 w-[150px] flex justify-center transition-all ease-in '
+							duration-150 rounded-full w-[150px] flex justify-center transition-all ease-in '
 							onClick={() => router.push("/about")}>
 							About
 						</li>
 						<li
-							className=' ring-2 ring-current  hover:bg-gray-900 hover:text-white rounded-full  active:bg-gray-200 w-[150px] flex justify-center transition-allduration-150 ease-in p-2'
+							className=' ring-2 ring-current  hover:bg-gray-900 hover:text-white rounded-full  w-[150px] flex justify-center transition-allduration-150 ease-in p-2'
 							onClick={() => router.push("/contact")}>
 							Contact
 						</li>
@@ -74,21 +79,21 @@ const Header = () => {
 				<button className='md:hidden'>
 					{menuOpen && (
 						<XIcon
-							className='h-6 active:rotate-180 ease-in-out transition-all duration-200'
+							className='h-6 active:-rotate-180 ease-in transition-all duration-200'
 							onClick={menuHandler}
 						/>
 					)}
 					{menuClosed && (
 						<MenuIcon
 							onClick={menuHandler}
-							className='h-6 onTouch:rotate-180 active:rotate-180 ease-in-out transition-all duration-200'
+							className='h-6 active:rotate-180 ease-in transition-all duration-200'
 						/>
 					)}
 				</button>
 			</div>
 			<nav
 				ref={menuRef}
-				className={`md:hidden h-screen w-1/2 bg-gray-50 text-gray-900 shadow-lg ${
+				className={`cursor-pointer md:hidden h-screen w-1/2 bg-gray-50 text-gray-900 shadow-lg ${
 					menuClosed && "-translate-x-full transition duration-200 ease-in"
 				} ${menuOpen && "transition duration-200 ease-in"} `}>
 				<ul className='flex flex-col space-y-4 text-base'>

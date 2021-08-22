@@ -23,6 +23,7 @@ const ProjectCard = ({
 			<div className='bg-white rounded-lg shadow-md p-2 flex flex-col space-y-4'>
 				<div className='relative h-[150px] w-[200px] mt-5 mx-auto'>
 					<Image
+						priority={true}
 						className='rounded-lg'
 						src={image}
 						height={800}
@@ -34,7 +35,6 @@ const ProjectCard = ({
 				</div>
 				<div>
 					<p>{descriptionStart}</p>
-
 					<Collapse in={readMore} unmountOnExit>
 						<p>{descriptionFull}</p>
 					</Collapse>

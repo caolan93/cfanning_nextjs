@@ -10,6 +10,8 @@ module.exports = {
 		},
 	},
 	variants: {
+		accessibility: ["responsive", "hover", "focus", "active", "group-hover"],
+		backgroundColor: ["responsive", "hover", "focus", "active"],
 		extend: {},
 	},
 	plugins: [],
