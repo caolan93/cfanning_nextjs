@@ -12,9 +12,9 @@ import {
 import emailjs from "emailjs-com";
 
 const Contact = () => {
-	const USER_ID = process.env.USER_ID;
-	const SERVICE_ID = process.env.SERVICE_ID;
-	const TEMPLATE_ID = process.env.TEMPLATE_ID;
+	const SERVICE_ID = "service_7f8qv05";
+	const TEMPLATE_ID = "template_7i7frct";
+	const USER_ID = "user_rsniahVKqq6ZoBZMSgMbM";
 
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
@@ -37,6 +37,7 @@ const Contact = () => {
 		emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID).then(
 			(result) => {
 				setEmailSuccess(true);
+				console.log("sent email");
 				setEmailFailure(true);
 				setName("");
 				setPhone("");
@@ -52,7 +53,7 @@ const Contact = () => {
 	return (
 		<div className='bg-gray-50'>
 			<Header />
-			<div className='flex flex-col md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl lg:mx-auto'>
+			<div className='flex flex-col md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl lg:mx-auto '>
 				{/* Left */}
 				<div className='flex flex-col '>
 					<h1 className='text-center text-2xl md:text-4xl p-3'>
@@ -79,6 +80,7 @@ const Contact = () => {
 				{/* Right */}
 				<div className='pb-[50px]'>
 					<h1 className='text-center text-2xl md:text-4xl p-3'>Get In Touch</h1>
+
 					<form className='flex flex-col space-y-4 px-3 mt-4 max-w-md mx-auto'>
 						<div className='flex flex-col space-y-1'>
 							<label className='pl-2'>Full Name</label>
@@ -127,7 +129,7 @@ const Contact = () => {
 						</div>
 						<button
 							onClick={sendEmail}
-							className='h-10 bg-gray-200 rounded-lg hover:bg-gray-300 active:scale-95 transition-all duration-150 ease-in'>
+							className='h-10 bg-blue-500 text-white rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-150 ease-in'>
 							Send
 						</button>
 					</form>
