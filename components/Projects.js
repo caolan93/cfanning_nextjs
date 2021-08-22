@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import proshoptn from "../images/proshopThumbnail.png";
 import huluThumbail from "../images/huluThumbnail.png";
 import airbnbThumbail from "../images/airbnbThumbnail.png";
+import portfolio from "../images/portfolio.png";
 
 const Projects = () => {
 	return (
@@ -39,16 +40,11 @@ const Projects = () => {
 				</div>
 				<div className='m-2'>
 					<ProjectCard
-						title='Proshop'
-						image={proshoptn}
+						title='Portfolio Website'
+						image={portfolio}
 						link='https://proshop-mernapp.herokuapp.com/'
-						descriptionStart='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-								quae aperiam facere harum minus quo nostrum quam iusto voluptate
-								aspernatur, et numquam asperiores doloribus quidem error, alias
-								necessitatibus consequatur.'
-						descriptionFull='Perspiciatis dignissimos id error
-                delectus voluptatem odio rerum odit a quasi enim, tempora ab
-                animi reiciendis harum iusto laborum quaerat quia.'
+						descriptionStart='This is my own personal portfolio website. I built it using the ReactJS framework NextJS. Once again I used TailwindCSS for the styling as I find it amazing to built responsive websites.'
+						descriptionFull='In order to give a full stack application feel, I used a package call EmailJS in order to achieve a fully functioning contact form. This package allows me to contact my personal email account to my portfolio website with the need for a backend and database. I used the Framer Motion package for the animations. I also am using a shared account on Hostinger to host my domain.'
 					/>
 				</div>
 			</div>

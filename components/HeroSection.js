@@ -22,10 +22,10 @@ const HeroSection = () => {
 				</button>
 			</div>
 
-			<div className='relative m-auto h-[350px] w-[280px] md:h-[400px] md:w-[320px] lg:h-[500px] lg:w-[400px]'>
+			<div className='rounded-lg relative m-auto h-[350px] w-[280px] md:h-[400px] md:w-[320px] lg:h-[500px] lg:w-[400px]'>
 				<Image
 					priority={true}
-					className='rounded-md'
+					className='rounded-lg'
 					objectFit='contain'
 					src={profile}
 					layout='fill'

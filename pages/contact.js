@@ -52,7 +52,7 @@ const Contact = () => {
 	return (
 		<div className='bg-gray-50'>
 			<Header />
-			<div className='flex flex-col my-[50px] md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl lg:mx-auto'>
+			<div className='flex flex-col md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl lg:mx-auto'>
 				{/* Left */}
 				<div className='flex flex-col '>
 					<h1 className='text-center text-2xl md:text-4xl p-3'>
