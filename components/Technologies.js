@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 import html from "../images/html.png";
 import js from "../images/js.png";
@@ -14,6 +17,33 @@ import react from "../images/react.png";
 import redux from "../images/redux.png";
 
 const Technologies = () => {
+	const { ref, inView } = useInView({
+		threshold: 0.3,
+	});
+	const animation = useAnimation();
+	const heroAnimation = {
+		hide: {
+			x: -600,
+			opacity: 0,
+		},
+		show: {
+			x: 0,
+			opacity: 1,
+			transition: { duration: 1, type: "spring", bounce: 0.2 },
+		},
+	};
+
+	console.log(inView);
+
+	useEffect(() => {
+		if (!inView) {
+			animation.start("hide");
+		}
+		if (inView) {
+			animation.start("show");
+		}
+	}, [inView, animation]);
+
 	const logoArr = [
 		html,
 		js,
@@ -29,7 +59,11 @@ const Technologies = () => {
 		sass,
 	];
 	return (
-		<div className='flex flex-col md:grid md:grid-cols-2 py-10 md:py-14 bg-gray-900 text-white '>
+		<motion.div
+			animate={animation}
+			variants={heroAnimation}
+			ref={ref}
+			className='flex flex-col md:grid md:grid-cols-2 py-10 md:py-14 bg-gray-900 text-white '>
 			<div className='grid grid-cols-3 min-h-[350px] mb-[50px] md:mb-0'>
 				{logoArr.map((logo) => (
 					<div
@@ -38,7 +72,6 @@ const Technologies = () => {
 						<div className='bg-white p-3 rounded-full'>
 							<div className='relative h-[35px] w-[35px] sm:h-[45px] sm:w-[45px] '>
 								<Image
-									priority={true}
 									src={logo}
 									alt={logo}
 									objectFit='contain'
@@ -72,7 +105,7 @@ const Technologies = () => {
 					</p>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

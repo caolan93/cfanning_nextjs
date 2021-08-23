@@ -1,13 +1,44 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { motion, useAnimation } from "framer-motion";
 
 import profile from "../images/profile.jpg";
-
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 const HeroSection = () => {
 	const router = useRouter();
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+	});
+	const animation = useAnimation();
+
+	const heroAnimation = {
+		hide: {
+			x: -600,
+			opacity: 0,
+		},
+		show: {
+			x: "0",
+			opacity: 1,
+			transition: { duration: 0.75, type: "spring", bounce: 0.2 },
+		},
+	};
+
+	useEffect(() => {
+		if (!inView) {
+			animation.start("hide");
+		}
+		if (inView) {
+			animation.start("show");
+		}
+	}, [inView, animation]);
 
 	return (
-		<div className='space-y-10 px-4 flex flex-col md:grid md:grid-cols-2 md:py-12 shadow-lg bg-white pb-[50px]'>
+		<motion.div
+			animate={animation}
+			variants={heroAnimation}
+			ref={ref}
+			className='space-y-10 px-4 flex flex-col md:grid md:grid-cols-2 md:py-12 bg-white pb-[50px] md:h-screen'>
 			<div className='flex flex-col justify-center items-center space-y-10'>
 				<h1 className='text-5xl mt-[50px] md:mt-0'>Welcome!</h1>
 				<p className='text-center max-w-[400px] lg:max-w-[650px]'>
@@ -26,12 +57,12 @@ const HeroSection = () => {
 					priority={true}
 					className='rounded-lg'
 					objectFit='contain'
-					src={profile}
 					layout='fill'
+					src={profile}
 					alt='profile'
 				/>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

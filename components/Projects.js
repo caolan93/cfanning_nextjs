@@ -1,4 +1,7 @@
 import ProjectCard from "./ProjectCard";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 import proshoptn from "../images/proshopThumbnail.png";
 import huluThumbail from "../images/huluThumbnail.png";
@@ -6,8 +9,42 @@ import airbnbThumbail from "../images/airbnbThumbnail.png";
 import portfolio from "../images/portfolio.png";
 
 const Projects = () => {
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+	});
+	const animation = useAnimation();
+
+	const heroAnimation = {
+		hide: {
+			x: -600,
+			opacity: 0,
+		},
+		show: {
+			x: "0",
+			opacity: 1,
+			transition: {
+				duration: 0.75,
+				type: "spring",
+				bounce: 0.2,
+			},
+		},
+	};
+
+	useEffect(() => {
+		if (!inView) {
+			animation.start("hide");
+		}
+		if (inView) {
+			animation.start("show");
+		}
+	}, [inView, animation]);
+
 	return (
-		<div className='flex flex-col md:grid md:grid-cols-2 md:py-12 bg-white py-10'>
+		<motion.div
+			animate={animation}
+			variants={heroAnimation}
+			ref={ref}
+			className='flex flex-col md:grid md:grid-cols-2 md:py-12 bg-white py-10'>
 			<div className='flex flex-col mx-auto'>
 				<div className='m-2'>
 					<ProjectCard
@@ -48,7 +85,7 @@ const Projects = () => {
 					/>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
