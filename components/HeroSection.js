@@ -12,12 +12,11 @@ const HeroSection = () => {
 				<h1 className='text-5xl mt-[50px] md:mt-0'>Welcome!</h1>
 				<p className='text-center max-w-[400px] lg:max-w-[650px]'>
 					My name is Caolan Fanning and this is my personal portfolio! I built
-					this website to showcase some of my skills as a web developer. Enjoy
-					your stay!
+					this website to showcase some of my skills as a web developer.
 				</p>
 				<button
 					onClick={() => router.push("/about")}
-					className='bg-gray-100 shadow-md text-gray-700 font-bold p-3 lg:p-4 rounded-lg active:bg-gray-200 active:shadow-lg hover:scale-105 transition duration-200 ease-in-out'>
+					className='bg-gray-200 shadow-md text-gray-700 font-bold p-3 lg:p-4 rounded-lg active:bg-gray-300 active:shadow-lg hover:scale-105 transition duration-200 ease-in-out'>
 					READ MORE..
 				</button>
 			</div>
