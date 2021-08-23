@@ -20,6 +20,7 @@ const Technologies = () => {
 	const { ref, inView } = useInView({
 		threshold: 0.3,
 	});
+
 	const animation = useAnimation();
 	const heroAnimation = {
 		hide: {
@@ -29,11 +30,14 @@ const Technologies = () => {
 		show: {
 			x: 0,
 			opacity: 1,
-			transition: { duration: 1, type: "spring", bounce: 0.2 },
+			transition: {
+				duration: 1,
+				type: "spring",
+				bounce: 0.2,
+				staggerChildren: 0.5,
+			},
 		},
 	};
-
-	console.log(inView);
 
 	useEffect(() => {
 		if (!inView) {
