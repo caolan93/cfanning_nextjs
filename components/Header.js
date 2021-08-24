@@ -60,7 +60,6 @@ const Header = () => {
 							className='ring-2 ring-current p-2 rounded-full  hover:bg-gray-900 hover:text-white
 							duration-150  w-[150px] flex justify-center transition-all ease-in '
 							onClick={() => router.push("/")}>
-							{" "}
 							Home
 						</li>
 						<li
@@ -93,7 +92,7 @@ const Header = () => {
 			</div>
 			<nav
 				ref={menuRef}
-				className={`cursor-pointer md:hidden h-screen w-1/2 bg-gray-50 text-gray-900 shadow-lg ${
+				className={`cursor-pointer md:hidden h-screen w-1/2 bg-gray-50 shadow-lg ${
 					menuClosed && "-translate-x-full transition duration-200 ease-in"
 				} ${menuOpen && "transition duration-200 ease-in"} `}>
 				<ul className='flex flex-col space-y-4 text-base'>
@@ -102,28 +101,28 @@ const Header = () => {
 							`${router.push("/")} ${menuHandler}`;
 						}}
 						className='flex items-center space-x-2 ml-5 mt-4'>
-						<HomeIcon className='h-6 p-1 border-2  rounded-full' />
+						<HomeIcon className='h-6 p-1 border-2 border-current  rounded-full' />
 						<li className=''>Home</li>
 					</div>
-					<div className='border-b-2 border-white' />
+					<div className='border-b-2 border-gray-100' />
 					<div
 						onClick={() => {
 							`${router.push("/about")} ${menuHandler}`;
 						}}
 						className='flex items-center space-x-2 ml-5'>
-						<BookOpenIcon className='h-6 p-1 border-2  rounded-full' />
+						<BookOpenIcon className='h-6 p-1 border-2 border-current   rounded-full' />
 						<li className=''>About</li>
 					</div>
-					<div className='border-b-2 border-white' />
+					<div className='border-b-2 border-gray-100' />
 					<div
 						onClick={() => {
 							`${router.push("/contact")} ${menuHandler}`;
 						}}
 						className='flex items-center space-x-2 ml-5'>
-						<PhoneIcon className='h-6 p-1 border-2 rounded-full' />
+						<PhoneIcon className='h-6 p-1 border-2 border-current  rounded-full' />
 						<li className=''>Contact</li>
 					</div>
-					<div className='border-b-2 border-white' />
+					<div className='border-b-2 border-gray-100' />
 				</ul>
 			</nav>
 		</header>

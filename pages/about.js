@@ -18,13 +18,11 @@ import freecodecamp from "../images/freecodecamp.png";
 
 const About = () => {
 	const animation = useAnimation();
-	const { ref, inView } = useInView({
-		threshold: 0.2,
-	});
+	const { ref, inView } = useInView({});
 
 	const heroAnimation = {
 		hide: {
-			y: 1000,
+			y: 600,
 			opacity: 0,
 		},
 		show: {

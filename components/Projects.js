@@ -10,7 +10,7 @@ import portfolio from "../images/portfolio.png";
 
 const Projects = () => {
 	const { ref, inView } = useInView({
-		threshold: 0.3,
+		threshold: 0.2,
 	});
 	const animation = useAnimation();
 

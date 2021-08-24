@@ -39,8 +39,7 @@ const Contact = () => {
 		emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID).then(
 			(result) => {
 				setEmailSuccess(true);
-				console.log("sent email");
-				setEmailFailure(true);
+				setEmailFailure(false);
 				setName("");
 				setPhone("");
 				setEmail("");
@@ -54,13 +53,11 @@ const Contact = () => {
 	};
 
 	const animation = useAnimation();
-	const { ref, inView } = useInView({
-		threshold: 0.2,
-	});
+	const { ref, inView } = useInView({});
 
 	const heroAnimation = {
 		hide: {
-			y: 1000,
+			y: 800,
 			opacity: 0,
 		},
 		show: {
@@ -112,60 +109,71 @@ const Contact = () => {
 
 				{/* Right */}
 				<div className='pb-[50px]'>
-					<h1 className='text-center text-2xl md:text-4xl p-3'>Get In Touch</h1>
+					<h1 className='text-center text-2xl md:text-4xl p-3'>
+						{emailFailure ? "Message Failed. Try Again." : "Get In Touch!"}
+					</h1>
 
-					<form className='flex flex-col space-y-4 px-3 mt-4 max-w-md mx-auto'>
-						<div className='flex flex-col space-y-1'>
-							<label className='pl-2'>Full Name</label>
-							<input
-								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
-								type='text'
-								value={name}
-								name='name'
-								placeholder='Name'
-								onChange={(e) => setName(e.target.value)}
-							/>
+					{emailSuccess ? (
+						<div className='flex flex-col justify-center h-[350px] md:h-[620px]'>
+							<h1 className='text-center text-2xl md:text-4 w-[70%] mx-auto'>
+								Thanks you! I will respond to you as soon as I receive your
+								message.
+							</h1>
 						</div>
-						<div className='flex flex-col space-y-1'>
-							<label className='pl-2'>Email</label>
-							<input
-								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
-								type='email'
-								name='email'
-								placeholder='Email'
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-							/>
-						</div>
-						<div className='flex flex-col space-y-1'>
-							<label className='pl-2'>Phone</label>
-							<input
-								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
-								type='number'
-								name='phone'
-								placeholder='Phone'
-								value={phone}
-								onChange={(e) => setPhone(e.target.value)}
-							/>
-						</div>
-						<div className='flex flex-col space-y-1'>
-							<label className='pl-2'>Message</label>
-							<textarea
-								className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
-								type='text'
-								name='message'
-								rows='8'
-								placeholder='Message'
-								value={message}
-								onChange={(e) => setMessage(e.target.value)}
-							/>
-						</div>
-						<button
-							onClick={sendEmail}
-							className='h-10 bg-blue-500 text-white rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-150 ease-in'>
-							Send
-						</button>
-					</form>
+					) : (
+						<form className='flex flex-col space-y-4 px-3 mt-4 max-w-md mx-auto'>
+							<div className='flex flex-col space-y-1'>
+								<label className='pl-2'>Full Name</label>
+								<input
+									className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+									type='text'
+									value={name}
+									name='name'
+									placeholder='Name'
+									onChange={(e) => setName(e.target.value)}
+								/>
+							</div>
+							<div className='flex flex-col space-y-1'>
+								<label className='pl-2'>Email</label>
+								<input
+									className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+									type='email'
+									name='email'
+									placeholder='Email'
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+							</div>
+							<div className='flex flex-col space-y-1'>
+								<label className='pl-2'>Phone</label>
+								<input
+									className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+									type='number'
+									name='phone'
+									placeholder='Phone'
+									value={phone}
+									onChange={(e) => setPhone(e.target.value)}
+								/>
+							</div>
+							<div className='flex flex-col space-y-1'>
+								<label className='pl-2'>Message</label>
+								<textarea
+									className='ring-2 ring-gray-100 rounded-lg p-2 outline-none'
+									type='text'
+									name='message'
+									rows='8'
+									placeholder='Message'
+									value={message}
+									onChange={(e) => setMessage(e.target.value)}
+								/>
+							</div>
+							<button
+								onClick={sendEmail}
+								className='h-10 bg-blue-500 text-white rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-150 ease-in'>
+								Send
+							</button>
+						</form>
+					)}
 				</div>
 			</motion.div>
 			<Footer />
