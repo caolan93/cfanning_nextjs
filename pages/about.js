@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -14,6 +17,31 @@ import stack from "../images/stack.png";
 import freecodecamp from "../images/freecodecamp.png";
 
 const About = () => {
+	const animation = useAnimation();
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+	});
+
+	const heroAnimation = {
+		hide: {
+			y: 1000,
+			opacity: 0,
+		},
+		show: {
+			y: 0,
+			opacity: [0.1, 1],
+			transition: { duration: 0.75, type: "ease-in", bounce: 0.4 },
+		},
+	};
+	useEffect(() => {
+		if (!inView) {
+			animation.start("hide");
+		}
+		if (inView) {
+			animation.start("show");
+		}
+	}, [inView, animation]);
+
 	const teachersArr = [
 		{
 			name: "Brad Travesy",
@@ -50,7 +78,11 @@ const About = () => {
 	return (
 		<div className='bg-gray-50'>
 			<Header />
-			<div className='max-w-[1500px] mx-auto py-[50px] bg-white shadow-lg rounded-lg'>
+			<motion.div
+				animate={animation}
+				variants={heroAnimation}
+				ref={ref}
+				className='max-w-[1500px] mx-auto py-[50px] bg-white shadow-lg rounded-lg'>
 				<h1 className='text-2xl md:text-4xl my-4 font-bold px-3 md:px-10'>
 					About Me..
 				</h1>
@@ -160,7 +192,7 @@ const About = () => {
 						<br /> Yours Sincerely, <br /> Caolan.
 					</p>
 				</div>
-			</div>
+			</motion.div>
 			<Footer />
 		</div>
 	);

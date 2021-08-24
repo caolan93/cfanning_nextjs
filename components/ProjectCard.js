@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 import Collapse from "@material-ui/core/Collapse";
@@ -39,7 +38,7 @@ const ProjectCard = ({
 					</Collapse>
 				</div>
 				<div className='justify-self-center self-center'>
-					<a href={link} target='_blank' rel='noopener'>
+					<a href={link} target='_blank'>
 						<button className=' text-white hover:bg-blue-700 px-3 py-2  rounded-md bg-blue-500 transition-all active:scale-95 ease-out duration-100'>
 							View Project
 						</button>

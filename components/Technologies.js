@@ -24,18 +24,11 @@ const Technologies = () => {
 	const animation = useAnimation();
 	const heroAnimation = {
 		hide: {
-			x: -600,
 			opacity: 0,
 		},
 		show: {
-			x: 0,
-			opacity: 1,
-			transition: {
-				duration: 1,
-				type: "spring",
-				bounce: 0.2,
-				staggerChildren: 0.5,
-			},
+			opacity: [0.1, 1],
+			transition: { duration: 0.75, type: "ease-in" },
 		},
 	};
 

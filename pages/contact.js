@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -50,10 +52,41 @@ const Contact = () => {
 			}
 		);
 	};
+
+	const animation = useAnimation();
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+	});
+
+	const heroAnimation = {
+		hide: {
+			y: 1000,
+			opacity: 0,
+		},
+		show: {
+			y: 0,
+			opacity: [0.1, 1],
+			transition: { duration: 0.75, type: "ease-in", bounce: 0.4 },
+		},
+	};
+
+	useEffect(() => {
+		if (!inView) {
+			animation.start("hide");
+		}
+		if (inView) {
+			animation.start("show");
+		}
+	}, [inView, animation]);
+
 	return (
 		<div className='bg-gray-50'>
 			<Header />
-			<div className='flex flex-col md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl lg:mx-auto '>
+			<motion.div
+				animate={animation}
+				variants={heroAnimation}
+				ref={ref}
+				className='flex flex-col md:grid md:grid-cols-2 bg-white shadow-lg rounded-lg mx-3 max-w-7xl lg:mx-auto '>
 				{/* Left */}
 				<div className='flex flex-col '>
 					<h1 className='text-center text-2xl md:text-4xl p-3'>
@@ -134,7 +167,7 @@ const Contact = () => {
 						</button>
 					</form>
 				</div>
-			</div>
+			</motion.div>
 			<Footer />
 		</div>
 	);

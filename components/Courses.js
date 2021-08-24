@@ -1,6 +1,38 @@
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+
 const Courses = () => {
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+	});
+	const animation = useAnimation();
+
+	const heroAnimation = {
+		hide: {
+			opacity: 0,
+		},
+		show: {
+			opacity: [0.1, 1],
+			transition: { duration: 0.75, type: "ease-in" },
+		},
+	};
+
+	useEffect(() => {
+		if (!inView) {
+			animation.start("hide");
+		}
+		if (inView) {
+			animation.start("show");
+		}
+	}, [inView, animation]);
+
 	return (
-		<div className='bg-red-700 text-white py-[50px]'>
+		<motion.div
+			animate={animation}
+			variants={heroAnimation}
+			ref={ref}
+			className='bg-red-700 text-white py-[50px]'>
 			<div className='p-3 mb-4'>
 				<h1 className='text-4xl text-center text-bold'>Courses</h1>
 				<div className='border border-white w-[55px] sm:border sm:w-[80px] mx-auto rounded-sm' />
@@ -109,7 +141,7 @@ const Courses = () => {
 					</a>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
