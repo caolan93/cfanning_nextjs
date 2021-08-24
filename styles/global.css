@@ -1,8 +1,0 @@
-@tailwind components;
-@tailwind base;
-
-@layer base {
-	body {
-		@apply text-sm sm:text-base lg:text-lg bg-gray-50 text-gray-900;
-	}
-}

@@ -52,6 +52,7 @@ const HeroSection = () => {
 
 			<div className='rounded-lg relative m-auto h-[350px] w-[280px] md:h-[400px] md:w-[320px] lg:h-[500px] lg:w-[400px]'>
 				<Image
+					priority
 					className='rounded-lg'
 					objectFit='contain'
 					layout='fill'
