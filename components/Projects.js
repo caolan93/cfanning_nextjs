@@ -3,10 +3,10 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-import proshoptn from "../images/proshopThumbnail.png";
-import huluThumbail from "../images/huluThumbnail.png";
-import airbnbThumbail from "../images/airbnbThumbnail.png";
-import portfolio from "../images/portfolio.png";
+import proshoptn from "../public/static/proshopThumbnail.png";
+import huluThumbail from "../public/static/huluThumbnail.png";
+import airbnbThumbail from "../public/static/airbnbThumbnail.png";
+import portfolio from "../public/static/portfolio.png";
 
 const Projects = () => {
 	const { ref, inView } = useInView({

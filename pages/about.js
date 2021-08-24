@@ -6,15 +6,15 @@ import Header from "../components/Header";
 
 import Image from "next/image";
 
-import brad from "../images/brad.jpeg";
-import ania from "../images/ania.jpeg";
-import deved from "../images/deved.jpeg";
-import sonny from "../images/sonny.jpeg";
+import brad from "../public/static/brad.jpeg";
+import ania from "../public/static/ania.jpeg";
+import deved from "../public/static/deved.jpeg";
+import sonny from "../public/static/sonny.jpeg";
 
-import youtube from "../images/youtube.png";
-import udemy from "../images/udemy.png";
-import stack from "../images/stack.png";
-import freecodecamp from "../images/freecodecamp.png";
+import youtube from "../public/static/youtube.png";
+import udemy from "../public/static/udemy.png";
+import stack from "../public/static/stack.png";
+import freecodecamp from "../public/static/freecodecamp.png";
 
 const About = () => {
 	const animation = useAnimation();
@@ -113,10 +113,9 @@ const About = () => {
 							<a href={item.link} target='_blank'>
 								<div className='relative h-[200px] w-[200px] lg:h-[250px] lg:w-[250px]'>
 									<Image
-										priority={true}
-										className='rounded-t-lg'
 										layout='fill'
 										objectFit='contain'
+										className='rounded-t-lg'
 										src={item.img}
 										alt={item.name}
 									/>
@@ -155,12 +154,11 @@ const About = () => {
 							key={teachersArr.indexOf(item)}
 							className=' my-6 flex flex-col shadow-lg rounded-lg cursor-pointer md:hover:scale-105 transition-all ease-in-out duration-300'>
 							<a href={item.link} target='_blank'>
-								<div className=' relative h-[200px] w-[200px] lg:h-[250px] lg:w-[250px]'>
+								<div className='relative h-[200px] w-[200px] lg:h-[250px] lg:w-[250px]'>
 									<Image
-										priority={true}
-										className='rounded-t-lg'
 										layout='fill'
 										objectFit='contain'
+										className='rounded-t-lg'
 										src={item.img}
 										alt={item.name}
 									/>

@@ -3,18 +3,18 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-import html from "../images/html.png";
-import js from "../images/js.png";
-import css from "../images/css.png";
-import sass from "../images/sass.png";
-import material from "../images/material.png";
-import framer from "../images/framer.png";
-import nodejs from "../images/nodejs.png";
-import express from "../images/express.png";
-import mongodb from "../images/mongodb.png";
-import github from "../images/github.png";
-import react from "../images/react.png";
-import redux from "../images/redux.png";
+import html from "../public/static/html.png";
+import js from "../public/static/js.png";
+import css from "../public/static/css.png";
+import sass from "../public/static/sass.png";
+import material from "../public/static/material.png";
+import framer from "../public/static/framer.png";
+import nodejs from "../public/static/nodejs.png";
+import express from "../public/static/express.png";
+import mongodb from "../public/static/mongodb.png";
+import github from "../public/static/github.png";
+import react from "../public/static/react.png";
+import redux from "../public/static/redux.png";
 
 const Technologies = () => {
 	const { ref, inView } = useInView({
