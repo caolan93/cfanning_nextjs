@@ -33,8 +33,6 @@ const Projects = () => {
 		}
 	}, [inView, animation]);
 
-	console.log(inView);
-
 	return (
 		<motion.div
 			animate={animation}
