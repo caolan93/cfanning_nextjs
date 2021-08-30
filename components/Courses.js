@@ -106,16 +106,6 @@ const Courses = () => {
 						www.udemy.com/course/advanced-css-and-sass The Complete Node.js
 					</a>
 				</div>
-				<div className='flex flex-col md:grid grid-cols-2 md:space-x-2'>
-					<p className='font-semibold'>
-						The Complete Node.js Developer Course (3rd Edition)
-					</p>
-					<a
-						href='www.udemy.com/course/the-complete-nodejs-developer-course-2'
-						className='text-xs md:text-sm italic'>
-						www.udemy.com/course/the-complete-nodejs-developer-course-2
-					</a>
-				</div>
 				<div>
 					<h1 className='text-2xl font-bold'>Current Courses</h1>
 					<div className='border w-[185px] border-red-700' />
@@ -128,6 +118,16 @@ const Courses = () => {
 						href='	www.udemy.com/course/learn-figma-user-interface-design-essentials-uiux-design'
 						className='text-xs md:text-sm italic'>
 						www.udemy.com/course/learn-figma-user-interface-design-essentials-uiux-design
+					</a>
+				</div>
+				<div className='flex flex-col md:grid grid-cols-2 md:space-x-2'>
+					<p className='font-semibold'>
+						The Complete Node.js Developer Course (3rd Edition)
+					</p>
+					<a
+						href='www.udemy.com/course/the-complete-nodejs-developer-course-2'
+						className='text-xs md:text-sm italic'>
+						www.udemy.com/course/the-complete-nodejs-developer-course-2
 					</a>
 				</div>
 				<div className='flex flex-col md:grid grid-cols-2 md:space-x-2'>
